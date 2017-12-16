@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(135, 240, 135);
+}
+
+
+/*  Main Header style */
+
+.jumbotron {
+    color: white;
+    background-image: url(../../assets/images/golf.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h4 {
+    text-align: center;
+    color: white;
+}
+
+.panel-title {
+    color: hsl(300, 7%, 12%);
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+.panel-heading,
+.panel {
+    border: 1px solid rgb(170, 228, 170) !important;
+}
+
+h2,
+#currentTime {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+
+/*  style for weather section */
+
+#weather-imagebackground {
+    background-image: url(../../assets/images/cloudy.jpg) !important;
+    padding: 10px 0;
+}
+
+#weather-forecast {
+    text-align: center;
+}
+
+h3 {
+    color: blue;
+}
+
+.weatherContainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#weatherTemp,
+#windSpeed,
+#skyCondition {
+    color: rgb(46, 1, 145);
+    margin: 10px 0;
+    padding: 2px;
+    background-color: rgba(235, 233, 247, 0.19);
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    border-style: ridge;
+}
+
+th,
+.fiveDayForecast {
+    text-align: center;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
