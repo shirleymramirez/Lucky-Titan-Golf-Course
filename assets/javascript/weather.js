@@ -19,11 +19,7 @@ window.onload = function() {
         "thunderstorm": "<img src=http://openweathermap.org/img/w/11d.png>",
         "snow": "<img src=http://openweathermap.org/img/w/13d.png>",
         "mist": "<img src=http://openweathermap.org/img/w/50d.png>",
-<<<<<<< HEAD
-=======
-
->>>>>>> 1116f6fc2b8e7feafe97d25e9df55cc9fbc3d814
-    }
+    };
 
     // ---------------------- get current weather forecast for the day ---------------------------------------------------------------
     function getCurrentWeatherData(zipCode) {

@@ -61,7 +61,7 @@ $(document).ready(function() {
                 '<td id="numCarts">' + item.numberOfCarts + "</td>" +
                 '<td id="numHours">' + item.numberOfHours + "</td>" +
                 "<td>" +
-                '<button type="button" class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button>' +
+                '<button type="button" data-key="' + childSnapshot.key + '"class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button>' +
                 '<button type="button" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button>' +
                 "</td>" + "</tr>");
 
@@ -72,9 +72,16 @@ $(document).ready(function() {
         }
     );
 
-    $("body").on("click", ".edit-row", function()) {
-
-    }
+    $("body").on("click", ".edit-row", function(event) {
+        console.log($(this).attr("data-key"));
+        var key = $(this).attr("data-key");
+        database.ref().child(key).once('value')
+            .then(function(snapshot) {
+                var value = snapshot.val();
+                console.log(value);
+            });
+        x
+    });
 
     // ---------------------------------------------------------------------------------------------------
 });
