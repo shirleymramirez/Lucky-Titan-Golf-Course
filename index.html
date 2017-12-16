@@ -6,6 +6,7 @@
     <title>Lucky Titan Golf Course</title>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- CSS Link -->
@@ -14,18 +15,31 @@
     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
     <!-- Moment.js Reference -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
 </head>
 
 <body>
     <!-- Main Header Section -->
     <div class="container">
+        <br>
+        <br>
         <div class="jumbotron">
             <h1 class="text-center">Lucky Titan Golf Course</h1>
-            <h4>Birdy, Par, Eagle, Bogey</h4>
-            <h2>Current Time: <span id="currentTime"></span></h2>
+
+
+        </div>
+        <!-- First Row for Reservation List and Weather info -->
+        <div class="row row1">
+            <div class="col-lg-12">
+                <div class="panel panel-warning" id="time">
+                    <h2>Current Time: <span id="currentTime"></span></h2>
+                </div>
+            </div>
         </div>
 
-        <!-- First Row for Reservation List and Weather info -->
+
+
         <div class="row row1">
             <!-- Golf Tee Reservation List -->
             <div class="col-lg-6">
@@ -42,6 +56,7 @@
                                 <th># of Players</th>
                                 <th>Need a Cart</th>
                                 <th>Hours</th>
+<<<<<<< HEAD
                                 <th class="edit"></th>
                             </tr>
                         </thead>
@@ -53,11 +68,16 @@
                                     </button>
                                 </td>
                             </tr> -->
+=======
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservationLists">
+>>>>>>> d0414e80a110cf9ef5b4c472ccbfb6f2f148049e
                         </tbody>
                     </table>
                 </div>
             </div>
-
             <!-- Weather Information Section -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
@@ -70,7 +90,6 @@
                             <h3><span id="cityName"></span></h3>
                             <div class="weatherContainer"></div>
                         </div>
-                        <!-- Five Days Weather Forecast -->
                         <table class="table table-bordered" class="tableForecast">
                             <thead>
                                 <tr>
@@ -86,12 +105,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
         <!-- Second Row for Player Fill-up Form and Map/Direction info -->
         <div class="row row2">
-
             <!-- Player Information Form -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
@@ -127,24 +143,37 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
+
                 </div>
             </div>
-
             <!-- Map/Direction Section -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Direction</h3>
+                        <h3 class="panel-title">Google Map</h3>
                     </div>
                     <div class="panel-body">
+                        <div id="map">Error?</div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="wait"></div>
+
     </div>
+
+    <!-- Primary Footer -->
+    <footer class="primary-footer group">
+        <small>&copy; Copyright 2017 Shirley Ramirez, Andy Sargent and Oscar Benitez</small>
+    </footer>
+
     <!-- JavaScript -->
     <script src="./assets/javascript/logic.js"></script>
     <script src="./assets/javascript/weather.js"></script>
+    <script src="./assets/javascript/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAimY9bqtpifxINeVyzrvZVvsh4dZzG5eU&callback=initMap">
+    </script>
 </body>
 
 </html>
