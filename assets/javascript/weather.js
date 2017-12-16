@@ -1,4 +1,5 @@
 window.onload = function() {
+
     // individual api key from openweathermap site
     var apiKey = "329e51714e606b5e94d875af875cd4a4";
 
@@ -17,17 +18,15 @@ window.onload = function() {
         "thunderstorm": "<img src=http://openweathermap.org/img/w/11d.png>",
         "snow": "<img src=http://openweathermap.org/img/w/13d.png>",
         "mist": "<img src=http://openweathermap.org/img/w/50d.png>",
-    };
+       
+    }
 
     // ---------------------- get current weather forecast for the day ---------------------------------------------------------------
     function getCurrentWeatherData(zipCode) {
         // call json to access openweathermap current weather data using city zipcode and api key
         $.getJSON(
-            "https://api.openweathermap.org/data/2.5/weather?zip=" +
-            zipCode +
-            ",us" +
-            "&APPID=" +
-            apiKey,
+            "https://api.openweathermap.org/data/2.5/weather?zip=" + zipCode +
+            ",us" + "&APPID=" + apiKey,
             function(data) {
                 var dayForeCast = getDayForecast(data);
                 // get icon from skyConditionURLImageMap object
@@ -39,45 +38,26 @@ window.onload = function() {
                 $(".weatherContainer").empty();
 
                 // update html weather container
-                $(".weatherContainer").append(
-                    '<div id="weatherTemp">' +
-                    "Current Temp: " +
-                    dayForeCast.temperature +
-                    "℉" +
-                    "</div>"
-                );
-                $(".weatherContainer").append(
-                    '<div id="skyCondition">' +
-                    icon +
-                    " " +
-                    dayForeCast.skyCondition +
-                    "</div>"
-                );
-                $(".weatherContainer").append(
-                    '<div id="windSpeed">' +
-                    " Wind: " +
-                    dayForeCast.windSpeed +
-                    " mph " +
-                    "</div>"
-                );
+                $(".weatherContainer").append('<div id="weatherTemp">' + "Current Temp: " + dayForeCast.temperature + "℉" + "</div>");
+                $(".weatherContainer").append('<div id="skyCondition">' + icon + " " + dayForeCast.skyCondition + "</div>");
+                $(".weatherContainer").append('<div id="windSpeed">' + " Wind: " + dayForeCast.windSpeed + " mph " + "</div>");
             }
-        );
+        )
     }
 
     // ---------------------- get five days weather forecast function ---------------------------------------------------------------
     function getFiveDayWeatherForecast(zipCode) {
+
         // call json to access openweathermap using city zipcode and api key for 5 day/ 3 hour forecast
         $.getJSON(
-            "https://api.openweathermap.org/data/2.5/forecast?zip=" +
-            zipCode +
-            ",us" +
-            "&APPID=" +
-            apiKey,
+            "https://api.openweathermap.org/data/2.5/forecast?zip=" + zipCode +
+            ",us" + "&APPID=" + apiKey,
             function(data) {
+
                 // clear parent container in HTML
                 $(".fiveDayForecast").empty();
 
-                // since it's a 5 day/3 hours forecast, we will
+                // since it's a 5 day/3 hours forecast, we will 
                 // loop through data list every 8 indeces to get the data for
                 // each day for 5 days
                 for (var i = 0; i < data.list.length; i += 8) {
@@ -94,8 +74,7 @@ window.onload = function() {
                         "<td>" + dayForeCast.temperature + "℉" + "</td>" +
                         "<td>" + icon + " " + dayForeCast.skyCondition + "</td>" +
                         "<td>" + dayForeCast.windSpeed + " mph" + " " + dayForeCast.windDirection + "</td>" +
-                        "</tr>"
-                    );
+                        "</tr>");
                 }
             }
         );
@@ -107,6 +86,7 @@ window.onload = function() {
     setInterval(function() {
         getCurrentWeatherData(zipCode);
     }, 3600000);
+
 };
 // ---------------------- get a day weather forecast function ---------------------------------------------------------------
 function getDayForecast(data) {
@@ -116,7 +96,7 @@ function getDayForecast(data) {
         dayOfTheWeek = moment(data.dt_txt).format("dddd");
     }
 
-    // temperature conversion
+    // temperature conversion 
     var tempInF = (data.main.temp - 273.15) * 1.8 + 32;
 
     // data return
@@ -125,7 +105,7 @@ function getDayForecast(data) {
         temperature: Math.round(tempInF),
         windDirection: getWindDirection(data.wind.deg),
         windSpeed: data.wind.speed,
-        skyCondition: data.weather[0].description
+        skyCondition: data.weather[0].description,
     };
 }
 // ---------------------- get wind direction function ---------------------------------------------------------------

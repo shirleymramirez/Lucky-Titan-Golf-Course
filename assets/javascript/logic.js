@@ -26,6 +26,7 @@ $(document).ready(function() {
 
     //------------------ capture submit button click ------------------------------
     $("#inputForm").on("submit", function() {
+
         // storing and retrieving the most recent user.
         firstName = $("#firstNameInput").val().trim();
         lastName = $("#lastNameInput").val().trim();
@@ -46,18 +47,23 @@ $(document).ready(function() {
         return false;
     });
 
+
     //----------------- firebase watcher on value event-----------------------------------------
-    database.ref().on(
-        "child_added",
-        function(childSnapshot) {
+    database.ref().on("child_added", function(childSnapshot) {
+
             //log everything that's coming out of snapshot
             var item = childSnapshot.val();
 
-            // Change HTML Elements to reflect changes on Reservation Lists Table
-            $("#reservationLists").append('<tr class="' + childSnapshot.key + '"><td>' + item.firstName + "</td>" +
-                "<td>" + item.lastName + "</td>" + "<td>" + item.numberOfPlayers + "</td>" +
-                "<td>" + item.numberOfCarts + "</td>" + "<td>" + item.numberOfHours + "</td></tr>"
-            );
+            // Change HTML Elements to reflect changes on Reservation Lists Table 
+                $("#reservationLists").append('<tr class="' + childSnapshot.key + '"><td>' + item.firstName + "</td>" + 
+                    "<td>" + item.lastName + "</td>" + 
+                    '<td id="numPlayers">' + item.numberOfPlayers + "</td>" + 
+                    '<td id="numCarts">' + item.numberOfCarts + "</td>" + 
+                    '<td id="numHours">' + item.numberOfHours + "</td>" + 
+                    "<td>" + 
+                    '<button type="button" class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button>' + 
+                    '<button type="button" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button>' + 
+                    "</td>" + "</tr>");
 
             // Handle the errors
         },
@@ -65,5 +71,21 @@ $(document).ready(function() {
             console.log("Errors handled: " + errorObject.code);
         }
     );
+
+    function editRow() {
+
+    }
+
+    function deleteRow() {
+        // Find and remove selected table rows
+        $(".delete-row").click(function() {
+            $("table tbody").find('input[name="record"]').each(function() {
+                if ($(this).is(":checked")) {
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    }
+
     // ---------------------------------------------------------------------------------------------------
 });
