@@ -35,7 +35,7 @@ h2,
 #currentTime {
     
     text-align: center;
-    color: white;
+    color: black;
     font-size: 20px;
     margin: 2px, 2px, 2px, 2px;
 }
@@ -89,6 +89,13 @@ img {
        }
 
 #time{
-    background-color: gray;
-    opacity: .5;
+    background-color: transparent;
+  
+    border: none !important;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: -28px;
 }
