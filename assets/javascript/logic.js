@@ -54,24 +54,9 @@ $(document).ready(function() {
             var item = childSnapshot.val();
 
             // Change HTML Elements to reflect changes on Reservation Lists Table
-            $("#reservationLists").append(
-                '<tr class="' +
-                childSnapshot.key +
-                '"><td>' +
-                item.firstName +
-                "</td>" +
-                "<td>" +
-                item.lastName +
-                "</td>" +
-                "<td>" +
-                item.numberOfPlayers +
-                "</td>" +
-                "<td>" +
-                item.numberOfCarts +
-                "</td>" +
-                "<td>" +
-                item.numberOfHours +
-                "</td></tr>"
+            $("#reservationLists").append('<tr class="' + childSnapshot.key + '"><td>' + item.firstName + "</td>" +
+                "<td>" + item.lastName + "</td>" + "<td>" + item.numberOfPlayers + "</td>" +
+                "<td>" + item.numberOfCarts + "</td>" + "<td>" + item.numberOfHours + "</td></tr>"
             );
 
             // Handle the errors
