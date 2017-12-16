@@ -12,15 +12,14 @@ window.onload = function() {
         "few clouds": "<img src=http://openweathermap.org/img/w/02d.png>",
         "scattered clouds": "<img src=http://openweathermap.org/img/w/03d.png>",
         "broken clouds": "<img src=http://openweathermap.org/img/w/04d.png>",
+        "overcast clouds": "<img src=http://openweathermap.org/img/w/04d.png>",
         "shower rain": "<img src=http://openweathermap.org/img/w/09d.png>",
         "rain": "<img src=http://openweathermap.org/img/w/10d.png>",
         "light rain": "<img src=http://openweathermap.org/img/w/10d.png>",
         "thunderstorm": "<img src=http://openweathermap.org/img/w/11d.png>",
         "snow": "<img src=http://openweathermap.org/img/w/13d.png>",
         "mist": "<img src=http://openweathermap.org/img/w/50d.png>",
-        // getUrl: (skyCondition, night / day) {
-        //     this.[skyCondition];
-        // }
+
     }
 
     // ---------------------- get current weather forecast for the day ---------------------------------------------------------------
@@ -31,8 +30,10 @@ window.onload = function() {
             ",us" + "&APPID=" + apiKey,
             function(data) {
                 var dayForeCast = getDayForecast(data);
+
                 // get icon from skyConditionURLImageMap object
                 var icon = skyConditionURLImageMap[dayForeCast.skyCondition];
+
                 // update weather element in html
                 $("#cityName").text("Weather Forecast for " + data.name + " AZ");
 

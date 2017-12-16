@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="utf-8">
     <title>Lucky Titan Golf Course</title>
@@ -14,7 +15,10 @@
     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
     <!-- Moment.js Reference -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+
 </head>
+
 <body>
     <!-- Main Header Section -->
     <div class="container">
@@ -22,8 +26,8 @@
         <br>
         <div class="jumbotron">
             <h1 class="text-center">Lucky Titan Golf Course</h1>
-            
-           
+
+
         </div>
         <!-- First Row for Reservation List and Weather info -->
         <div class="row row1">
@@ -33,7 +37,7 @@
                 </div>
             </div>
         </div>
-                       
+
 
 
         <div class="row row1">
@@ -52,17 +56,10 @@
                                 <th># of Players</th>
                                 <th>Need a Cart</th>
                                 <th>Hours</th>
-                                <th class="edit"></th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody id="reservationLists">
-                            <!-- <tr>
-                                <td>
-                                    <button type="submit" class="btn btn-primary">
-                                        <span class="glyphicons glyphicons-bin"></span>
-                                    </button>
-                                </td>
-                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -79,7 +76,6 @@
                             <h3><span id="cityName"></span></h3>
                             <div class="weatherContainer"></div>
                         </div>
-                        <!-- Five Days Weather Forecast -->
                         <table class="table table-bordered" class="tableForecast">
                             <thead>
                                 <tr>
@@ -133,6 +129,7 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
+
                 </div>
             </div>
             <!-- Map/Direction Section -->
@@ -147,16 +144,22 @@
                 </div>
             </div>
         </div>
+
+        <div class="wait"></div>
+
     </div>
+
+    <!-- Primary Footer -->
+    <footer class="primary-footer group">
+        <small>&copy; Copyright 2017 Shirley Ramirez, Andy Sargent and Oscar Benitez</small>
+    </footer>
+
     <!-- JavaScript -->
     <script src="./assets/javascript/logic.js"></script>
     <script src="./assets/javascript/weather.js"></script>
     <script src="./assets/javascript/map.js"></script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAimY9bqtpifxINeVyzrvZVvsh4dZzG5eU&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAimY9bqtpifxINeVyzrvZVvsh4dZzG5eU&callback=initMap">
     </script>
 </body>
+
 </html>
-
-
-
