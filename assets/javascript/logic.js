@@ -55,6 +55,17 @@ $(document).ready(function() {
             var item = childSnapshot.val();
 
             // Change HTML Elements to reflect changes on Reservation Lists Table 
+<<<<<<< HEAD
+                $("#reservationLists").append('<tr class="' + childSnapshot.key + '"><td>' + item.firstName + "</td>" + 
+                    "<td>" + item.lastName + "</td>" + 
+                    '<td id="numPlayers">' + item.numberOfPlayers + "</td>" + 
+                    '<td id="numCarts">' + item.numberOfCarts + "</td>" + 
+                    '<td id="numHours">' + item.numberOfHours + "</td>" + 
+                    "<td>" + 
+                    '<button type="button" class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button>' + 
+                    '<button type="button" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button>' + 
+                    "</td>" + "</tr>");
+=======
             $("#reservationLists").append('<tr class="' + childSnapshot.key + '"><td>' + item.firstName + "</td>" +
                 "<td>" + item.lastName + "</td>" +
                 '<td id="numPlayers">' + item.numberOfPlayers + "</td>" +
@@ -64,6 +75,7 @@ $(document).ready(function() {
                 '<button type="button" class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button>' +
                 '<button type="button" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button>' +
                 "</td>" + "</tr>");
+>>>>>>> d0414e80a110cf9ef5b4c472ccbfb6f2f148049e
 
             // Handle the errors
         },

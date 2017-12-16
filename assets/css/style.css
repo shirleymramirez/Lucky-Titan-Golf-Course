@@ -64,14 +64,22 @@ h3 {
 #weatherTemp,
 #windSpeed,
 #skyCondition {
+<<<<<<< HEAD
+    color: rgb(46, 10, 104);
+=======
     color: rgb(46, 1, 145);
+>>>>>>> shirley
     margin: 10px 0;
     padding: 2px;
     background-color: rgba(235, 233, 247, 0.19);
     font-size: 16px;
     border-radius: 10px;
     font-weight: bold;
+<<<<<<< HEAD
+    border-style: groove;
+=======
     border-style: ridge;
+>>>>>>> shirley
 }
 
 th,

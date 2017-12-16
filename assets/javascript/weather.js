@@ -19,7 +19,11 @@ window.onload = function() {
         "thunderstorm": "<img src=http://openweathermap.org/img/w/11d.png>",
         "snow": "<img src=http://openweathermap.org/img/w/13d.png>",
         "mist": "<img src=http://openweathermap.org/img/w/50d.png>",
+<<<<<<< HEAD
+       
+=======
 
+>>>>>>> d0414e80a110cf9ef5b4c472ccbfb6f2f148049e
     }
 
     // ---------------------- get current weather forecast for the day ---------------------------------------------------------------
