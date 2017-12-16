@@ -1,15 +1,17 @@
 body {
     background-color: rgb(135, 240, 135);
+    background-image: url(../../assets/images/fairway.jpg);
 }
 
 
 /*  Main Header style */
 
 .jumbotron {
-    color: white;
+    color: black;
     background-image: url(../../assets/images/golf.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 110%;
+    border: 1.5px solid black;
+    
 }
 
 h4 {
@@ -18,23 +20,24 @@ h4 {
 }
 
 .panel-title {
-    color: hsl(300, 7%, 12%);
+    color: black;
 }
 
 .panel-heading {
     text-align: center;
 }
 
-.panel-heading,
 .panel {
-    border: 1px solid rgb(170, 228, 170) !important;
+    border: 1.5px solid black !important;
 }
 
 h2,
 #currentTime {
+    
     text-align: center;
     color: white;
     font-size: 20px;
+    margin: 2px, 2px, 2px, 2px;
 }
 
 
@@ -42,7 +45,7 @@ h2,
 
 #weather-imagebackground {
     background-image: url(../../assets/images/cloudy.jpg) !important;
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 #weather-forecast {
@@ -79,4 +82,13 @@ th,
 img {
     width: 30px;
     height: 30px;
+}
+#map {
+        height: 400px;
+        width: 100%;
+       }
+
+#time{
+    background-color: gray;
+    opacity: .5;
 }
