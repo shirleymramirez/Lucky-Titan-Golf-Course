@@ -42,6 +42,9 @@
                                 <th># of Players</th>
                                 <th>Need a Cart</th>
                                 <th>Hours</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservationLists">
                                 <th class="edit"></th>
                             </tr>
                         </thead>
@@ -53,6 +56,7 @@
                                     </button>
                                 </td>
                             </tr> -->
+
                         </tbody>
                     </table>
                 </div>
@@ -64,6 +68,26 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Weather Update</h3>
                     </div>
+                </div>
+                <!-- Weather Forecast for the Day -->
+                <div id="weather-imagebackground">
+                    <div id="weather-forecast">
+                        <h3><span id="cityName"></span></h3>
+                        <div class="weatherContainer"></div>
+                    </div>
+                    <!-- Five Days Weather Forecast -->
+                    <table class="table table-bordered" class="tableForecast">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Temperature</th>
+                                <th>Sky Condition</th>
+                                <th>Wind Speed/Direction</th>
+                            </tr>
+                        </thead>
+                        <tbody class="fiveDayForecast">
+                        </tbody>
+                    </table>
                     <!-- Weather Forecast for the Day -->
                     <div id="weather-imagebackground">
                         <div id="weather-forecast">
