@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <!-- Moment.js Reference -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
 <body>
@@ -40,9 +42,17 @@
                                 <th># of Players</th>
                                 <th>Need a Cart</th>
                                 <th>Hours</th>
+                                <th class="edit"></th>
                             </tr>
                         </thead>
                         <tbody id="reservationLists">
+                            <!-- <tr>
+                                <td>
+                                    <button type="submit" class="btn btn-primary">
+                                        <span class="glyphicons glyphicons-bin"></span>
+                                    </button>
+                                </td>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -54,26 +64,26 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Weather Update</h3>
                     </div>
-                </div>
-                <!-- Weather Forecast for the Day -->
-                <div id="weather-imagebackground">
-                    <div id="weather-forecast">
-                        <h3><span id="cityName"></span></h3>
-                        <div class="weatherContainer"></div>
+                    <!-- Weather Forecast for the Day -->
+                    <div id="weather-imagebackground">
+                        <div id="weather-forecast">
+                            <h3><span id="cityName"></span></h3>
+                            <div class="weatherContainer"></div>
+                        </div>
+                        <!-- Five Days Weather Forecast -->
+                        <table class="table table-bordered" class="tableForecast">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Temperature</th>
+                                    <th>Sky Condition</th>
+                                    <th>Wind Speed/Direction</th>
+                                </tr>
+                            </thead>
+                            <tbody class="fiveDayForecast">
+                            </tbody>
+                        </table>
                     </div>
-                    <!-- Five Days Weather Forecast -->
-                    <table class="table table-bordered" class="tableForecast">
-                        <thead>
-                            <tr>
-                                <th>Day</th>
-                                <th>Temperature</th>
-                                <th>Sky Condition</th>
-                                <th>Wind Speed/Direction</th>
-                            </tr>
-                        </thead>
-                        <tbody class="fiveDayForecast">
-                        </tbody>
-                    </table>
                 </div>
             </div>
 
