@@ -11,7 +11,7 @@ body {
     background-image: url(../../assets/images/golf.jpg);
     background-size: 110%;
     border: 1.5px solid black;
-    
+    margin-bottom: 0;
 }
 
 h4 {
@@ -33,11 +33,28 @@ h4 {
 
 h2,
 #currentTime {
-    
     text-align: center;
     color: black;
     font-size: 20px;
     margin: 2px, 2px, 2px, 2px;
+}
+
+
+/*  reservation list style section */
+
+#nameHeader {
+    text-align: left;
+}
+
+#numPlayers,
+#numCarts,
+#numHours,
+#actionGylp {
+    text-align: center;
+}
+
+.edit-row {
+    margin-right: 15px;
 }
 
 
@@ -64,22 +81,14 @@ h3 {
 #weatherTemp,
 #windSpeed,
 #skyCondition {
-<<<<<<< HEAD
-    color: rgb(46, 10, 104);
-=======
     color: rgb(46, 1, 145);
->>>>>>> shirley
     margin: 10px 0;
     padding: 2px;
     background-color: rgba(235, 233, 247, 0.19);
     font-size: 16px;
     border-radius: 10px;
     font-weight: bold;
-<<<<<<< HEAD
-    border-style: groove;
-=======
     border-style: ridge;
->>>>>>> shirley
 }
 
 th,
@@ -91,19 +100,52 @@ img {
     width: 30px;
     height: 30px;
 }
-#map {
-        height: 400px;
-        width: 100%;
-       }
 
-#time{
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+#time {
     background-color: transparent;
-  
     border: none !important;
 }
 
-.row {
+
+/*.row {
     margin-right: -15px;
     margin-left: -15px;
     margin-top: -28px;
+}*/
+
+
+/* modal style section */
+
+.modal-dialog {
+    width: 450px;
+}
+
+.modal-header {
+    padding: 5px;
+}
+
+.modal-body {
+    padding: 20px 30px 10px;
+}
+
+.modal-header,
+h4,
+.close {
+    background-color: #FCF8E3;
+    color: black !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.glyphicon-edit {
+    margin-right: 10px;
+}
+
+.modalButtons {
+    width: 100px;
 }

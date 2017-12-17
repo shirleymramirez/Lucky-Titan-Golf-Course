@@ -20,8 +20,8 @@ $(document).ready(function() {
 
     var firstName = "";
     var lastName = "";
-    var numberOfPlayers = "";
-    var numberOfCarts = "";
+    var numberOfPlayers;
+    var numberOfCarts;
     var numberOfHours;
 
     //------------------ capture submit button click ------------------------------
@@ -55,14 +55,14 @@ $(document).ready(function() {
             var item = childSnapshot.val();
 
             // Change HTML Elements to reflect changes on Reservation Lists Table 
-            $("#reservationLists").append('<tr class="' + childSnapshot.key + '"><td>' + item.firstName + "</td>" +
-                "<td>" + item.lastName + "</td>" +
+            $("#reservationLists").append('<tr class="' + childSnapshot.key + '">' +
+                '<td id="playerName">' + item.firstName + " " + item.lastName + "</td>" +
                 '<td id="numPlayers">' + item.numberOfPlayers + "</td>" +
                 '<td id="numCarts">' + item.numberOfCarts + "</td>" +
                 '<td id="numHours">' + item.numberOfHours + "</td>" +
-                "<td>" +
+                '<td id="actionGylp">' +
                 '<button type="button" data-key="' + childSnapshot.key + '"class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button>' +
-                '<button type="button" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button>' +
+                '<button type="button" data-key="' + childSnapshot.key + '"class="delete-row"><span class="glyphicon glyphicon-trash"></span></button>' +
                 "</td>" + "</tr>");
 
             // Handle the errors
@@ -72,16 +72,29 @@ $(document).ready(function() {
         }
     );
 
+    $("body").on("click", ".delete-row", function(event) {
+        console.log($(this).attr("data-key"));
+        var key = $(this).attr("data-key");
+
+        $("#deleteModal").modal();
+
+        // obtain key value using once method -
+        database.ref().child(key).once("value").then(function(snapshot) {
+            var value = snapshot.val();
+            console.log(value);
+        });
+    });
+
     $("body").on("click", ".edit-row", function(event) {
         console.log($(this).attr("data-key"));
         var key = $(this).attr("data-key");
+
+        // obtain key value using once method - 
         database.ref().child(key).once('value')
             .then(function(snapshot) {
                 var value = snapshot.val();
+                $("#editModal").modal();
                 console.log(value);
             });
-        x
     });
-
-    // ---------------------------------------------------------------------------------------------------
 });
