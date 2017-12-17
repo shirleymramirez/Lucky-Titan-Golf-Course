@@ -121,6 +121,12 @@ img {
 
 /* modal style section */
 
+.formActions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
 .modal-dialog {
     width: 450px;
 }
@@ -145,6 +151,9 @@ h4,
 .glyphicon-edit {
     margin-right: 10px;
 }
+
+
+/* delete modal form */
 
 .modalButtons {
     width: 100px;

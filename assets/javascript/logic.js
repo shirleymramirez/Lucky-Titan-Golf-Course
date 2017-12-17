@@ -10,12 +10,12 @@ $(document).ready(function() {
     };
     firebase.initializeApp(config);
 
-    //------------------ Current Time Update on HTML page --------------------
+    // current Time Update on HTML page
     setInterval(function() {
         $("#currentTime").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
     }, 1000);
 
-    //------------------ Variable Declaration ----------------------------------
+    // variable Declaration 
     var database = firebase.database();
 
     var firstName = "";
@@ -23,8 +23,9 @@ $(document).ready(function() {
     var numberOfPlayers;
     var numberOfCarts;
     var numberOfHours;
+    var keyToUpdate;
 
-    //------------------ capture submit button click ------------------------------
+    // capture submit button click 
     $("#inputForm").on("submit", function() {
 
         // storing and retrieving the most recent user.
@@ -48,7 +49,7 @@ $(document).ready(function() {
     });
 
 
-    //----------------- firebase watcher on value event-----------------------------------------
+    // firebase watcher on value event
     database.ref().on("child_added", function(childSnapshot) {
 
             //log everything that's coming out of snapshot
@@ -72,29 +73,65 @@ $(document).ready(function() {
         }
     );
 
-    $("body").on("click", ".delete-row", function(event) {
-        console.log($(this).attr("data-key"));
-        var key = $(this).attr("data-key");
-
-        $("#deleteModal").modal();
-
-        // obtain key value using once method -
-        database.ref().child(key).once("value").then(function(snapshot) {
-            var value = snapshot.val();
-            console.log(value);
-        });
-    });
-
+    //  populate edit modal form
     $("body").on("click", ".edit-row", function(event) {
         console.log($(this).attr("data-key"));
         var key = $(this).attr("data-key");
-
+        keyToUpdate = key;
         // obtain key value using once method - 
+        // calls row values from database
         database.ref().child(key).once('value')
             .then(function(snapshot) {
                 var value = snapshot.val();
                 $("#editModal").modal();
+
+                // populate modal with data from the database 
+                $("#modalFirstName").val(value.firstName);
+                $("#modalLastName").val(value.lastName);
+                $("#modalNumberOfPlayers").val(value.numberOfPlayers);
+                $("#modalNumberOfHours").val(value.numberOfHours);
+                $("#modalNumberOfCarts").val(value.numberOfCarts);
                 console.log(value);
             });
     });
+
+    // handle changes on edit modal form
+    $("#editForm").on("submit", function(event) {
+        var databaseUpdate = database.ref().child(keyToUpdate);
+        console.log(databaseUpdate);
+
+        var firstName = $("#modalFirstName").val().trim();
+        var lastName = $("#modalLastName").val().trim();
+        var numOfPlayers = $("#modalNumberOfPlayers").val().trim();
+        var numOfHours = $("#modalNumberOfHours").val().trim();
+        var numOfCarts = $("#modalNumberOfCarts").val().trim();
+
+        // store updated data to Firebase database.
+        databaseUpdate.update({
+            firstName: firstName,
+            lastName: lastName,
+            numberOfPlayers: numOfPlayers,
+            numberOfCarts: numOfCarts,
+            numberOfHours: numOfHours
+        });
+
+    });
+
+    // delete button action
+    $("body").on("click", ".delete-row", function(event) {
+        console.log($(this).attr("data-key"));
+        //obtain key value
+        var key = $(this).attr("data-key");
+        keyToUpdate = key;
+        $("#deleteModal").modal();
+    });
+
+    // capturing ok/cancel button from the delete modal
+    $(".deleteOkButton").on("click", function() {
+        var databaseUpdate = database.ref().child(keyToUpdate);
+        databaseUpdate.remove();
+
+        $("#reservationLists tr." + keyToUpdate).remove();
+    });
+
 });

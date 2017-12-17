@@ -30,6 +30,7 @@
         <div class="jumbotron">
             <h1 class="text-center">Lucky Titan Golf Course</h1>
         </div>
+
         <!-- First Row for Reservation List and Weather info -->
         <div class="row">
             <div class="col-lg-12">
@@ -39,10 +40,8 @@
             </div>
         </div>
 
-
-
+        <!-- Golf Tee Reservation List -->
         <div class="row">
-            <!-- Golf Tee Reservation List -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
@@ -63,6 +62,8 @@
                     </table>
                 </div>
             </div>
+            <!-- End of Golf Tee Reservation List -->
+
             <!-- Weather Information Section -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
@@ -91,7 +92,9 @@
                 </div>
             </div>
         </div>
-        <!-- Second Row for Player Fill-up Form and Map/Direction info -->
+        <!-- End of Weather Information Section -->
+
+        <!-- Second Row for Player Fill-up Form  -->
         <div class="row ">
             <!-- Player Information Form -->
             <div class="col-lg-6">
@@ -111,7 +114,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="numberOfPlayers">Number of Players</label>
-                                <input type="text" class="form-control" id="numberOfPlayers" required>
+                                <input type="text" class="form-control" id="numberOfPlayers" required pattern="^\d+$">
                             </div>
                             <div class="form-group">
                                 <label for="numberOfHours">Hours</label>
@@ -120,6 +123,10 @@
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -135,6 +142,8 @@
 
                 </div>
             </div>
+            <!-- End of Second Row for Player Fill-up Form -->
+
             <!-- Map/Direction Section -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
@@ -146,8 +155,10 @@
                     </div>
                 </div>
             </div>
+            <!-- end map/direction -->
         </div>
     </div>
+
     <!-- Modals Form for Edit -->
     <div class="container">
         <!-- Modal -->
@@ -161,40 +172,44 @@
                         <h4><span class="glyphicon glyphicon-edit"></span>Update</h4>
                     </div>
                     <div class="modal-body">
-                        <form role="form">
+                        <form role="form" id="editForm">
                             <div class="form-group">
                                 <label for="firstName"><span class="glyphicon glyphicon-user"></span> First Name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                                <input type="text" class="form-control" id="modalFirstName" placeholder="Enter First Name" required>
                             </div>
                             <div class="form-group">
                                 <label for="lastName"><span class="glyphicon glyphicon-user"></span> Last Name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                                <input type="text" class="form-control" id="modalLastName" placeholder="Enter Last Name" required>
                             </div>
                             <div class="form-group">
                                 <label for="numberOfPlayers">Number of Players</label>
-                                <input type="text" class="form-control" id="numberOfPlayers" required>
+                                <input type="text" class="form-control" id="modalNumberOfPlayers" required pattern="^\d+$">
                             </div>
                             <div class="form-group">
                                 <label for="numberOfHours">Hours</label>
-                                <select class="form-control" id="numberOfHours">
+                                <select class="form-control" id="modalNumberOfHours">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="numberOfCarts">Need a Cart?</label>
-                                <select class="form-control" id="numberOfCarts">
+                                <select class="form-control" id="modalNumberOfCarts">
                                     <option>Yes</option>
                                     <option>No</option>
                                 </select>
                             </div>
+                            <div class="formActions">
+                                <button type="button" class="btn btn-default modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                <button type="submit" class="btn btn-primary modalButtons"><span class="glyphicon glyphicon-ok"></span> Ok</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default pull-left modalButtons form-control" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                        <button type="button" class="btn btn-primary pull-right modalButtons form-control" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Ok</button>
                     </div>
                 </div>
 
@@ -219,15 +234,15 @@
                         <p>Are you sure you want to delete these player?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default pull-left modalButtons form-control" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                        <button type="button" class="btn btn-primary pull-right modalButtons form-control" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Ok</button>
+                        <button type="button" class="btn btn-default pull-left modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        <button type="button" class="btn btn-primary deleteOkButton pull-right modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Ok</button>
                     </div>
                 </div>
 
             </div>
         </div>
-
     </div>
+    <!-- end of modal form for delete -->
 
     <!-- Primary Footer -->
     <footer class="primary-footer group">
