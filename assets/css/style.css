@@ -13,10 +13,17 @@ body {
 
 .jumbotron {
     color: black;
+<<<<<<< HEAD
     background-image: url(../../assets/images/titan.jpg);
     background-size: 100%;
     height: 190px;
     
+=======
+    background-image: url(../../assets/images/golf.jpg);
+    background-size: 110%;
+    border: 1.5px solid black;
+    margin-bottom: 0;
+>>>>>>> a03c29f3fdbd9edbc0a442e391411ba0e20955a7
 }
 
 
@@ -44,11 +51,28 @@ h4 {
 
 h2,
 #currentTime {
-    
     text-align: center;
     color: white;
     font-size: 20px;
     margin: 2px, 2px, 2px, 2px;
+}
+
+
+/*  reservation list style section */
+
+#nameHeader {
+    text-align: left;
+}
+
+#numPlayers,
+#numCarts,
+#numHours,
+#actionGylp {
+    text-align: center;
+}
+
+.edit-row {
+    margin-right: 15px;
 }
 
 
@@ -75,22 +99,14 @@ h3 {
 #weatherTemp,
 #windSpeed,
 #skyCondition {
-<<<<<<< HEAD
-    color: rgb(46, 10, 104);
-=======
     color: rgb(46, 1, 145);
->>>>>>> shirley
     margin: 10px 0;
     padding: 2px;
     background-color: rgba(235, 233, 247, 0.19);
     font-size: 16px;
     border-radius: 10px;
     font-weight: bold;
-<<<<<<< HEAD
-    border-style: groove;
-=======
     border-style: ridge;
->>>>>>> shirley
 }
 
 th,
@@ -102,16 +118,24 @@ img {
     width: 30px;
     height: 30px;
 }
+
 #map {
+<<<<<<< HEAD
         height: 377px;
         width: 100%;
        }
+=======
+    height: 400px;
+    width: 100%;
+}
+>>>>>>> a03c29f3fdbd9edbc0a442e391411ba0e20955a7
 
-#time{
+#time {
     background-color: transparent;
     border: none !important;
 }
 
+<<<<<<< HEAD
 .row {
     margin-right: -15px;
     margin-left: -15px;
@@ -120,4 +144,45 @@ img {
 
 .primary-footer {
     color: gray;
+=======
+
+/* modal style section */
+
+.formActions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.modal-dialog {
+    width: 450px;
+}
+
+.modal-header {
+    padding: 5px;
+}
+
+.modal-body {
+    padding: 20px 30px 10px;
+}
+
+.modal-header,
+h4,
+.close {
+    background-color: #FCF8E3;
+    color: black !important;
+    text-align: center;
+    font-size: 30px;
+}
+
+.glyphicon-edit {
+    margin-right: 10px;
+}
+
+
+/* delete modal form */
+
+.modalButtons {
+    width: 100px;
+>>>>>>> a03c29f3fdbd9edbc0a442e391411ba0e20955a7
 }

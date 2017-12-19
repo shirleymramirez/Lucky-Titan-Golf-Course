@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lucky Titan Golf Course</title>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -15,6 +16,8 @@
     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
     <!-- Moment.js Reference -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Bootstrap Modal Link -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -27,8 +30,9 @@
         <div class="jumbotron">
             <h1 class="text-center"></h1>
         </div>
+
         <!-- First Row for Reservation List and Weather info -->
-        <div class="row row0">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-warning" id="time">
                     <h2>Current Time: <span id="currentTime"></span></h2>
@@ -36,10 +40,8 @@
             </div>
         </div>
 
-
-
-        <div class="row row1">
-            <!-- Golf Tee Reservation List -->
+        <!-- Golf Tee Reservation List -->
+        <div class="row">
             <div class="col-lg-6">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
@@ -49,26 +51,19 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
+                                <th id="nameHeader">Name</th>
                                 <th># of Players</th>
                                 <th>Need a Cart</th>
                                 <th>Hours</th>
-
-                                <th class="edit"></th>
-                            </tr>
-                        </thead>
-                        <tbody id="reservationLists">
-             
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody id="reservationLists">
-
-                        </tbody>
+                        <tbody id="reservationLists"></tbody>
                     </table>
                 </div>
             </div>
+            <!-- End of Golf Tee Reservation List -->
+
             <!-- Weather Information Section -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
@@ -81,7 +76,7 @@
                             <h3><span id="cityName"></span></h3>
                             <div class="weatherContainer"></div>
                         </div>
-                        <table class="table table-bordered" class="tableForecast">
+                        <table class="table table-bordered tableForecast">
                             <thead>
                                 <tr>
                                     <th>Day</th>
@@ -97,8 +92,10 @@
                 </div>
             </div>
         </div>
-        <!-- Second Row for Player Fill-up Form and Map/Direction info -->
-        <div class="row row2">
+        <!-- End of Weather Information Section -->
+
+        <!-- Second Row for Player Fill-up Form  -->
+        <div class="row ">
             <!-- Player Information Form -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
@@ -106,7 +103,7 @@
                         <h3 class="panel-title">Player Information</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" id="inputForm">
+                        <form id="inputForm">
                             <div class="form-group">
                                 <label for="firstNameInput">First Name</label>
                                 <input type="text" class="form-control" id="firstNameInput" required>
@@ -117,26 +114,36 @@
                             </div>
                             <div class="form-group">
                                 <label for="numberOfPlayers">Number of Players</label>
-                                <input type="text" class="form-control" id="numberOfPlayers" required pattern="^([0-1]?[0-9]|2[0-3])(:[0-5][0-9])?$">
+                                <input type="text" class="form-control" id="numberOfPlayers" required pattern="^\d+$">
                             </div>
-                            <label for="numberOfHours">Hours</label>
-                            <select class="form-control" id="numberOfHours">
+                            <div class="form-group">
+                                <label for="numberOfHours">Hours</label>
+                                <select class="form-control" id="numberOfHours">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
                                     <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
                                 </select>
-                            <label for="numberOfCarts">Need a Cart?</label>
-                            <select class="form-control" id="numberOfCarts">
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfCarts">Need a Cart?</label>
+                                <select class="form-control" id="numberOfCarts">
                                     <option>Yes</option>
                                     <option>No</option>
                                 </select>
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
 
                 </div>
             </div>
+            <!-- End of Second Row for Player Fill-up Form -->
+
             <!-- Map/Direction Section -->
             <div class="col-lg-6">
                 <div class="panel panel-warning">
@@ -148,11 +155,94 @@
                     </div>
                 </div>
             </div>
+            <!-- end map/direction -->
         </div>
-
-        <div class="wait"></div>
-
     </div>
+
+    <!-- Modals Form for Edit -->
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="editModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"></button>
+                        <h4><span class="glyphicon glyphicon-edit"></span>Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="form-group">
+                                <label for="modalFirstName"><span class="glyphicon glyphicon-user"></span> First Name</label>
+                                <input type="text" class="form-control" id="modalFirstName" placeholder="Enter First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="modalLastName"><span class="glyphicon glyphicon-user"></span> Last Name</label>
+                                <input type="text" class="form-control" id="modalLastName" placeholder="Enter Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfPlayers">Number of Players</label>
+                                <input type="text" class="form-control" id="modalNumberOfPlayers" required pattern="^\d+$">
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfHours">Hours</label>
+                                <select class="form-control" id="modalNumberOfHours">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfCarts">Need a Cart?</label>
+                                <select class="form-control" id="modalNumberOfCarts">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                            </div>
+                            <div class="formActions">
+                                <button type="button" class="btn btn-default modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                <button type="submit" class="btn btn-primary modalButtons"><span class="glyphicon glyphicon-ok"></span> Ok</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of modal form for edit -->
+
+    <!-- Modal forms for delete -->
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Delete</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these player?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        <button type="button" class="btn btn-primary deleteOkButton pull-right modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Ok</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of modal form for delete -->
 
     <!-- Primary Footer -->
     <footer class="primary-footer group">
