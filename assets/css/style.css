@@ -113,7 +113,6 @@ img {
         width: 100%;
        }
 
-
 #time {
     background-color: transparent;
     border: none !important;
@@ -153,6 +152,16 @@ h4,
 
 .glyphicon-edit {
     margin-right: 10px;
+}
+
+.edit-row {
+    color: white;
+    background-color: #286090;
+}
+
+.delete-row {
+    color: white;
+    background-color: #F75C54;
 }
 
 /* delete modal form */
