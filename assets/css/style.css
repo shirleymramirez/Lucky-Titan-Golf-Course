@@ -145,6 +145,16 @@ h4,
     margin-right: 10px;
 }
 
+.edit-row {
+    color: white;
+    background-color: #286090;
+}
+
+.delete-row {
+    color: white;
+    background-color: #F75C54;
+}
+
 
 /* delete modal form */
 
