@@ -62,7 +62,8 @@ window.onload = function() {
                 // since it's a 5 day/3 hours forecast, we will 
                 // loop through data list every 8 indeces to get the data for
                 // each day for 5 days
-                for (var i = 0; i < data.list.length; i += 8) {
+                // for (var i = 0; i < data.list.length; i += 8) {
+                for (var i = 0; i <= 16; i += 8) {
                     var dayForeCast = getDayForecast(data.list[i]);
                     console.log("DayForCast: ", data.list[i]);
 
