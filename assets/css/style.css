@@ -14,6 +14,7 @@ body {
 .jumbotron {
     color: black;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-image: url(../../assets/images/titan.jpg);
     background-size: 100%;
     height: 190px;
@@ -24,8 +25,12 @@ body {
     border: 1.5px solid black;
     margin-bottom: 0;
 >>>>>>> a03c29f3fdbd9edbc0a442e391411ba0e20955a7
+=======
+    background-image: url(../../assets/images/titan.jpg);
+    background-size: 100%;
+    height: 190px;
+>>>>>>> 72f578407215cb94701d7bacc48fd9c532a6b3ed
 }
-
 
 h4 {
     text-align: center;
@@ -57,7 +62,6 @@ h2,
     margin: 2px, 2px, 2px, 2px;
 }
 
-
 /*  reservation list style section */
 
 #nameHeader {
@@ -74,7 +78,6 @@ h2,
 .edit-row {
     margin-right: 15px;
 }
-
 
 /*  style for weather section */
 
@@ -121,6 +124,7 @@ img {
 
 #map {
 <<<<<<< HEAD
+<<<<<<< HEAD
         height: 377px;
         width: 100%;
        }
@@ -129,12 +133,19 @@ img {
     width: 100%;
 }
 >>>>>>> a03c29f3fdbd9edbc0a442e391411ba0e20955a7
+=======
+        height: 377px;
+        width: 100%;
+       }
+
+>>>>>>> 72f578407215cb94701d7bacc48fd9c532a6b3ed
 
 #time {
     background-color: transparent;
     border: none !important;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .row {
     margin-right: -15px;
@@ -145,6 +156,10 @@ img {
 .primary-footer {
     color: gray;
 =======
+=======
+.primary-footer {
+    color: gray;
+>>>>>>> 72f578407215cb94701d7bacc48fd9c532a6b3ed
 
 /* modal style section */
 
@@ -179,10 +194,12 @@ h4,
     margin-right: 10px;
 }
 
-
 /* delete modal form */
 
 .modalButtons {
     width: 100px;
+<<<<<<< HEAD
 >>>>>>> a03c29f3fdbd9edbc0a442e391411ba0e20955a7
+=======
+>>>>>>> 72f578407215cb94701d7bacc48fd9c532a6b3ed
 }
