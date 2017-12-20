@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- saved from url=(0152)file:///Users/danlourd.ramirez/Developer/shirley/codingbootcamp/classes/week8/day22/project1/Lucky-Titan-Golf-Course/Lucky-Titan-Golf-Course/index.html? -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}
+</style><link type="text/css" rel="stylesheet" href="./Lucky Titan Golf Course_files/css"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}
+</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style-pbc{transition:opacity ease-in-out;background-color:rgba(0,0,0,0.45);text-align:center}.gm-style-pbt{font-size:22px;color:white;font-family:Roboto,Arial,sans-serif;position:relative;margin:0;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
+</style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lucky Titan Golf Course</title>
+    <!-- jQuery -->
+    <script src="./Lucky Titan Golf Course_files/jquery.min.js"></script>
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="./Lucky Titan Golf Course_files/bootstrap.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" type="text/css" href="./Lucky Titan Golf Course_files/style.css">
+    <link rel="stylesheet" type="text/css" href="./Lucky Titan Golf Course_files/bootstrap-datetimepicker.min.css">
+    <!-- Firebase Reference -->
+    <script src="./Lucky Titan Golf Course_files/firebase.js"></script>
+    <!-- Moment.js Reference -->
+    <script src="./Lucky Titan Golf Course_files/moment.min.js"></script>
+    <!-- Bootstrap Modal Link -->
+    <script src="./Lucky Titan Golf Course_files/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" charset="UTF-8" src="./Lucky Titan Golf Course_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./Lucky Titan Golf Course_files/map.js"></script><script type="text/javascript" charset="UTF-8" src="./Lucky Titan Golf Course_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./Lucky Titan Golf Course_files/marker.js"></script><style type="text/css">.gm-style {
+        font: 400 11px Roboto, Arial, sans-serif;
+        text-decoration: none;
+      }
+      .gm-style img { max-width: none; }</style><script type="text/javascript" charset="UTF-8" src="./Lucky Titan Golf Course_files/onion.js"></script><script type="text/javascript" charset="UTF-8" src="./Lucky Titan Golf Course_files/controls.js"></script><script type="text/javascript" charset="UTF-8" src="./Lucky Titan Golf Course_files/stats.js"></script></head>
+
+<body>
+    <!-- Main Header Section -->
+    <div class="container">
+        <br>
+        <br>
+        <div class="jumbotron">
+            <h1 class="text-center"></h1>
+        </div>
+
+        <!-- First Row for Reservation List and Weather info -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-warning" id="time">
+                    <h2>Current Time: <span id="currentTime">December 19th 2017, 7:08:16 pm</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Golf Tee Reservation List -->
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Reservation Lists</h3>
+                    </div>
+                    <!-- Player Reservation Table Section -->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th id="nameHeader">Name</th>
+                                <th id="dateHeader">Date</th>
+                                <th>Players</th>
+                                <th>Cart</th>
+                                <th>Hours</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservationLists"><tr class="-L0g888xTwatZixAddas"><td id="playerName">Tiger Woods</td><td id="reservedDate">12/19/2017 6:57 pm</td><td id="numPlayers">1</td><td id="numCarts">No</td><td id="numHours">3</td><td id="actionGylp"><button type="button" data-key="-L0g888xTwatZixAddas" class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button><button type="button" data-key="-L0g888xTwatZixAddas" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button></td></tr><tr class="-L0l3AXIxHs-cQacElqn"><td id="playerName">Celine Carey</td><td id="reservedDate">12/26/2017 12:00 am</td><td id="numPlayers">2</td><td id="numCarts">No</td><td id="numHours">1</td><td id="actionGylp"><button type="button" data-key="-L0l3AXIxHs-cQacElqn" class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button><button type="button" data-key="-L0l3AXIxHs-cQacElqn" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button></td></tr><tr class="-L0lOAx2yDVfQ2Xvg-zN"><td id="playerName">Rizal Luna</td><td id="reservedDate">12/24/2017 8:30 am</td><td id="numPlayers">1</td><td id="numCarts">No</td><td id="numHours">1</td><td id="actionGylp"><button type="button" data-key="-L0lOAx2yDVfQ2Xvg-zN" class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button><button type="button" data-key="-L0lOAx2yDVfQ2Xvg-zN" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button></td></tr><tr class="-L0lXuRcDHQKGyUFadMf"><td id="playerName">Seth Ramirez</td><td id="reservedDate">12/25/2017 7:30 pm</td><td id="numPlayers">3</td><td id="numCarts">Yes</td><td id="numHours">1</td><td id="actionGylp"><button type="button" data-key="-L0lXuRcDHQKGyUFadMf" class="edit-row"><span class="glyphicon glyphicon-pencil"></span></button><button type="button" data-key="-L0lXuRcDHQKGyUFadMf" class="delete-row"><span class="glyphicon glyphicon-trash"></span></button></td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- End of Golf Tee Reservation List -->
+
+            <!-- Weather Information Section -->
+            <div class="col-lg-5">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Weather Update</h3>
+                    </div>
+                    <!-- Weather Forecast for the Day -->
+                    <div id="weather-imagebackground">
+                        <div id="weather-forecast">
+                            <h3><span id="cityName">Weather Forecast for Gilbert AZ</span></h3>
+                            <div class="weatherContainer"><div id="weatherTemp">Current Temp: 61℉</div><div id="skyCondition"><img src="./Lucky Titan Golf Course_files/01d.png"> clear sky</div><div id="windSpeed"> Wind: 1.07 mph </div></div>
+                        </div>
+                        <table class="table table-bordered tableForecast">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Temperature</th>
+                                    <th>Condition</th>
+                                    <th>Wind</th>
+                                </tr>
+                            </thead>
+                            <tbody class="fiveDayForecast"><tr><td>Wednesday</td><td>42℉</td><td><img src="./Lucky Titan Golf Course_files/01d.png"> clear sky</td><td>1.07 mph SW</td></tr><tr><td>Thursday</td><td>40℉</td><td><img src="./Lucky Titan Golf Course_files/02d.png"> few clouds</td><td>1.42 mph SE</td></tr><tr><td>Friday</td><td>30℉</td><td><img src="./Lucky Titan Golf Course_files/01d.png"> clear sky</td><td>1.66 mph SW</td></tr></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Weather Information Section -->
+
+        <!-- Second Row for Player Fill-up Form  -->
+        <div class="row ">
+            <!-- Player Information Form -->
+            <div class="col-lg-7">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Player Information</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form id="inputForm">
+                            <div class="form-group">
+                                <label for="firstNameInput">First Name</label>
+                                <input type="text" class="form-control" id="firstNameInput" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastNameInput">Last Name</label>
+                                <input type="text" class="form-control" id="lastNameInput" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="dateTimePicker">Reservation Date</label>
+                                <div class="input-group date" id="dateTimePicker">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfPlayers">Number of Players</label>
+                                <input type="text" class="form-control" id="numberOfPlayers" required="" pattern="^\d+$">
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfHours">Hours</label>
+                                <select class="form-control" id="numberOfHours">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfCarts">Need a Cart?</label>
+                                <select class="form-control" id="numberOfCarts">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End of Second Row for Player Fill-up Form -->
+
+            <!-- Map/Direction Section -->
+            <div class="col-lg-5">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Google Map</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="map" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div tabindex="0" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;) 8 8, default;"><div style="z-index: 1; position: absolute; top: 0px; left: 0px; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; position: absolute; left: -58px; top: -74px;"></div><div style="width: 256px; height: 256px; position: absolute; left: -58px; top: 182px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 198px; top: -74px;"></div><div style="width: 256px; height: 256px; position: absolute; left: 198px; top: 182px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -58px; top: -74px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -58px; top: 182px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 198px; top: -74px;"><canvas draggable="false" height="256" width="256" style="user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 198px; top: 182px;"><canvas draggable="false" height="256" width="256" style="user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas></div></div></div></div><div style="position: absolute; z-index: 0; left: 0px; top: 0px;"><div style="overflow: hidden; width: 424px; height: 377px;"><img src="./Lucky Titan Golf Course_files/StaticMapService.GetMapImage" style="width: 424px; height: 377px;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;"><div style="position: absolute; left: -58px; top: -74px; transition: opacity 200ms ease-out;"><img draggable="false" alt="" src="./Lucky Titan Golf Course_files/vt" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -58px; top: 182px; transition: opacity 200ms ease-out;"><img draggable="false" alt="" src="./Lucky Titan Golf Course_files/vt(1)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 198px; top: -74px; transition: opacity 200ms ease-out;"><img draggable="false" alt="" src="./Lucky Titan Golf Course_files/vt(2)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 198px; top: 182px; transition: opacity 200ms ease-out;"><img draggable="false" alt="" src="./Lucky Titan Golf Course_files/vt(3)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div class="gm-style-pbc" style="z-index: 2; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0; transition-duration: 0.8s;"><p class="gm-style-pbt">Use ⌘ + scroll to zoom the map</p></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"><div style="z-index: 1; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px;"></div></div><div style="z-index: 4; position: absolute; top: 0px; left: 0px; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" href="https://maps.google.com/maps?ll=33.356245,-111.792011&amp;z=12&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" title="Click to see this area on Google Maps" style="position: static; overflow: visible; float: none; display: inline;"><div style="width: 66px; height: 26px; cursor: pointer;"><img alt="" src="./Lucky Titan Golf Course_files/google4.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div><div style="background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 62px; top: 99px;"><div style="padding: 0px 0px 10px; font-size: 16px;">Map Data</div><div style="font-size: 13px;">Map data ©2017 Google</div><div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img alt="" src="./Lucky Titan Golf Course_files/mapcnt6.png" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 168px; bottom: 0px; width: 121px;"><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Map Data</a><span style="">Map data ©2017 Google</span></div></div></div><div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2017 Google</div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 96px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Terms of Use</a></div></div><button draggable="false" title="Toggle fullscreen view" aria-label="Toggle fullscreen view" type="button" style="background: none; border: 0px; margin: 10px 14px; padding: 0px; position: absolute; cursor: pointer; user-select: none; width: 25px; height: 25px; overflow: hidden; top: 0px; right: 0px;"><img alt="" src="./Lucky Titan Golf Course_files/sv9.png" draggable="false" class="gm-fullscreen-control" style="position: absolute; left: -52px; top: -86px; width: 164px; height: 175px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></button><div draggable="false" class="gm-style-cc" style="user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_new" title="Report errors in the road map or imagery to Google" href="https://www.google.com/maps/@33.356245,-111.792011,12z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Report a map error</a></div></div><div class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom" draggable="false" controlwidth="28" controlheight="93" style="margin: 10px; user-select: none; position: absolute; bottom: 107px; right: 28px;"><div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; left: 0px; top: 38px;"><div draggable="false" style="user-select: none; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; background-color: rgb(255, 255, 255); width: 28px; height: 55px;"><button draggable="false" title="Zoom in" aria-label="Zoom in" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img alt="" src="./Lucky Titan Golf Course_files/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></button><div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;"></div><button draggable="false" title="Zoom out" aria-label="Zoom out" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;"><div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;"><img alt="" src="./Lucky Titan Golf Course_files/tmapctrl.png" draggable="false" style="position: absolute; left: 0px; top: -15px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;"></div></button></div></div><div class="gm-svpc" controlwidth="28" controlheight="28" style="background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; width: 28px; height: 28px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;) 8 8, default; position: absolute; left: 0px; top: 0px;"><div style="position: absolute; left: 1px; top: 1px;"></div><div style="position: absolute; left: 1px; top: 1px;"><div aria-label="Street View Pegman Control" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px;"><img alt="" src="./Lucky Titan Golf Course_files/cb_scout5.png" draggable="false" style="position: absolute; left: -147px; top: -26px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div aria-label="Pegman is on top of the Map" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img alt="" src="./Lucky Titan Golf Course_files/cb_scout5.png" draggable="false" style="position: absolute; left: -147px; top: -52px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div aria-label="Street View Pegman Control" style="width: 26px; height: 26px; overflow: hidden; position: absolute; left: 0px; top: 0px; visibility: hidden;"><img alt="" src="./Lucky Titan Golf Course_files/cb_scout5.png" draggable="false" style="position: absolute; left: -147px; top: -78px; width: 215px; height: 835px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div class="gmnoprint" controlwidth="28" controlheight="0" style="display: none; position: absolute;"><div title="Rotate map 90 degrees" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; cursor: pointer; display: none;"><img alt="" src="./Lucky Titan Golf Course_files/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: 6px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div class="gm-tilt" style="width: 28px; height: 28px; overflow: hidden; position: absolute; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px; top: 0px; cursor: pointer;"><img alt="" src="./Lucky Titan Golf Course_files/tmapctrl4.png" draggable="false" style="position: absolute; left: -141px; top: -13px; width: 170px; height: 54px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div><div class="gmnoprint" style="margin: 10px; z-index: 0; position: absolute; cursor: pointer; left: 0px; top: 0px;"><div class="gm-style-mtc" style="float: left; position: relative;"><div role="button" tabindex="0" title="Show street map" aria-label="Show street map" aria-pressed="true" draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-left-radius: 2px; border-top-left-radius: 2px; -webkit-background-clip: padding-box; background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; min-width: 22px; font-weight: 500;">Map</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; position: absolute; left: 0px; top: 29px; text-align: left; display: none;"><div draggable="false" title="Show street map with terrain" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden; display: none;"><img alt="" src="./Lucky Titan Golf Course_files/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Terrain</label></div></div></div><div class="gm-style-mtc" style="float: left; position: relative;"><div role="button" tabindex="0" title="Show satellite imagery" aria-label="Show satellite imagery" aria-pressed="false" draggable="false" style="direction: ltr; overflow: hidden; text-align: center; position: relative; color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 8px; border-bottom-right-radius: 2px; border-top-right-radius: 2px; -webkit-background-clip: padding-box; background-clip: padding-box; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; min-width: 40px; border-left: 0px;">Satellite</div><div style="background-color: white; z-index: -1; padding: 2px; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; position: absolute; right: 0px; top: 29px; text-align: left; display: none;"><div draggable="false" title="Show imagery with street names" style="color: rgb(0, 0, 0); font-family: Roboto, Arial, sans-serif; user-select: none; font-size: 11px; background-color: rgb(255, 255, 255); padding: 6px 8px 6px 6px; direction: ltr; text-align: left; white-space: nowrap;"><span role="checkbox" style="box-sizing: border-box; position: relative; line-height: 0; font-size: 0px; margin: 0px 5px 0px 0px; display: inline-block; background-color: rgb(255, 255, 255); border: 1px solid rgb(198, 198, 198); border-radius: 1px; width: 13px; height: 13px; vertical-align: middle;"><div style="position: absolute; left: 1px; top: -2px; width: 13px; height: 11px; overflow: hidden;"><img alt="" src="./Lucky Titan Golf Course_files/imgs8.png" draggable="false" style="position: absolute; left: -52px; top: -44px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 68px; height: 67px;"></div></span><label style="vertical-align: middle; cursor: pointer;">Labels</label></div></div></div></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end map/direction -->
+        </div>
+    </div>
+
+    <!-- Modals Form for Edit -->
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="editModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"></button>
+                        <h4><span class="glyphicon glyphicon-edit"></span>Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editForm">
+                            <div class="form-group">
+                                <label for="modalFirstName">First Name</label>
+                                <input type="text" class="form-control" id="modalFirstName" placeholder="Enter First Name" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="modalLastName">Last Name</label>
+                                <input type="text" class="form-control" id="modalLastName" placeholder="Enter Last Name" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="modalDateTimePicker">Reservation Date</label>
+                                <div class="input-group date" id="modalDateTimePicker">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfPlayers">Number of Players</label>
+                                <input type="text" class="form-control" id="modalNumberOfPlayers" required="" pattern="^\d+$">
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfHours">Hours</label>
+                                <select class="form-control" id="modalNumberOfHours">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfCarts">Need a Cart?</label>
+                                <select class="form-control" id="modalNumberOfCarts">
+                                    <option>Yes</option>
+                                    <option>No</option>
+                                </select>
+                            </div>
+                            <div class="formActions">
+                                <button type="button" class="btn btn-default modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                                <button type="submit" class="btn btn-primary modalButtons"><span class="glyphicon glyphicon-ok"></span> Ok</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of modal form for edit -->
+
+    <!-- Modal forms for delete -->
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="deleteModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title">Delete</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these player?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                        <button type="button" class="btn btn-primary deleteOkButton pull-right modalButtons" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span> Ok</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of modal form for delete -->
+
+    <!-- Primary Footer -->
+    <footer class="primary-footer group">
+        <small>© Copyright 2017 Shirley Ramirez, Andy Sargent and Oscar Benitez</small>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./Lucky Titan Golf Course_files/bootstrap-datetimepicker.min.js"></script>
+    <script src="./Lucky Titan Golf Course_files/logic.js"></script>
+    <script src="./Lucky Titan Golf Course_files/weather.js"></script>
+    <script src="./Lucky Titan Golf Course_files/map(1).js"></script>
+    <script async="" defer="" src="./Lucky Titan Golf Course_files/js">
+    </script>
+
+
+</body></html>

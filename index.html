@@ -7,11 +7,11 @@
     <title>Lucky Titan Golf Course</title>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- CSS Link -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-datetimepicker.min.css">
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
     <!-- Moment.js Reference -->
@@ -42,7 +42,7 @@
 
         <!-- Golf Tee Reservation List -->
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
                         <h3 class="panel-title">Reservation Lists</h3>
@@ -52,8 +52,9 @@
                         <thead>
                             <tr>
                                 <th id="nameHeader">Name</th>
-                                <th># of Players</th>
-                                <th>Need a Cart</th>
+                                <th id="dateHeader">Date</th>
+                                <th>Players</th>
+                                <th>Cart</th>
                                 <th>Hours</th>
                                 <th>Actions</th>
                             </tr>
@@ -65,7 +66,7 @@
             <!-- End of Golf Tee Reservation List -->
 
             <!-- Weather Information Section -->
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
                         <h3 class="panel-title">Weather Update</h3>
@@ -81,8 +82,8 @@
                                 <tr>
                                     <th>Day</th>
                                     <th>Temperature</th>
-                                    <th>Sky Condition</th>
-                                    <th>Wind Speed/Direction</th>
+                                    <th>Condition</th>
+                                    <th>Wind</th>
                                 </tr>
                             </thead>
                             <tbody class="fiveDayForecast">
@@ -97,7 +98,7 @@
         <!-- Second Row for Player Fill-up Form  -->
         <div class="row ">
             <!-- Player Information Form -->
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
                         <h3 class="panel-title">Player Information</h3>
@@ -111,6 +112,15 @@
                             <div class="form-group">
                                 <label for="lastNameInput">Last Name</label>
                                 <input type="text" class="form-control" id="lastNameInput" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dateTimePicker">Reservation Date</label>
+                                <div class='input-group date' id='dateTimePicker'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>                            
                             </div>
                             <div class="form-group">
                                 <label for="numberOfPlayers">Number of Players</label>
@@ -145,7 +155,7 @@
             <!-- End of Second Row for Player Fill-up Form -->
 
             <!-- Map/Direction Section -->
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
                         <h3 class="panel-title">Google Map</h3>
@@ -174,12 +184,21 @@
                     <div class="modal-body">
                         <form id="editForm">
                             <div class="form-group">
-                                <label for="modalFirstName"><span class="glyphicon glyphicon-user"></span> First Name</label>
+                                <label for="modalFirstName">First Name</label>
                                 <input type="text" class="form-control" id="modalFirstName" placeholder="Enter First Name" required>
                             </div>
                             <div class="form-group">
-                                <label for="modalLastName"><span class="glyphicon glyphicon-user"></span> Last Name</label>
+                                <label for="modalLastName">Last Name</label>
                                 <input type="text" class="form-control" id="modalLastName" placeholder="Enter Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="modalDateTimePicker">Reservation Date</label>
+                                <div class='input-group date' id='modalDateTimePicker'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>                            
                             </div>
                             <div class="form-group">
                                 <label for="numberOfPlayers">Number of Players</label>
@@ -250,6 +269,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="./assets/javascript/bootstrap-datetimepicker.min.js"></script>
     <script src="./assets/javascript/logic.js"></script>
     <script src="./assets/javascript/weather.js"></script>
     <script src="./assets/javascript/map.js"></script>
