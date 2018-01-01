@@ -96,6 +96,7 @@ function getDayForecast(data) {
     // get the day of the week through moment() and change the format to Monday to Friday string
     var dayOfTheWeek = moment().format("dddd");
     if (data.dt_txt) {
+        console.log(data.dt_txt);
         dayOfTheWeek = moment(data.dt_txt).format("dddd");
     }
 
